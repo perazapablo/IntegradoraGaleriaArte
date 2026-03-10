@@ -29,7 +29,6 @@
                                         <th class="px-5 py-3">ID</th>
                                         <th class="px-5 py-3">Nombre de Adicional</th>
                                         <th classz="px-5 py-3">Tipo</th>                                
-                                        <th class="px-5 py-3">Descripción</th>
                                         <th class="px-5 py-3">Precio</th>
                                         <th class="px-5 py-3 text-center">Acciones</th>
                                     </tr>
@@ -40,7 +39,6 @@
                                         <td class="px-5 py-5 text-sm">@{{ adicional.id }}</td>
                                         <td class="px-5 py-5 text-sm font-bold">@{{ adicional.nombre }}</td>
                                         <td class="px-5 py-5 text-sm font-bold">@{{ adicional.tipo_nombre }}</td>
-                                        <td class="px-5 py-5 text-sm text-gray-600">@{{ adicional.descripcion }}</td>
                                         <td class="px-5 py-5 text-sm text-gray-600">$@{{ adicional.precio }}</td>
                                         <td class="px-5 py-5 text-sm text-center">
                                             <button 
@@ -108,10 +106,7 @@
                                                 <input type="number" step="0.01" name="precio" v-model="form.precio" required
                                                     class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                             </div>
-                                            <div>
-                                                <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2" >Descripcion</label>
-                                                <input type="text" name="descripcion" v-model="form.descripcion" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
-                                            </div>
+                                           
                                     </div>
 
                                                <div class="mt-8 pt-4 border-t border-gray-200 flex justify-between items-center">

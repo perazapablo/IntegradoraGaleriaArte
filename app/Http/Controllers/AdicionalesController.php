@@ -35,7 +35,6 @@ class AdicionalesController extends Controller
             //Se incertan datos recibidos de la peticion
             $adicional= new Adicionales();
             $adicional -> nombre = $context['nombre'];
-            $adicional->descripcion=$context['descripcion'];
             $adicional->idtipo=$context['idtipo'];
             $adicional->precio=$context['precio'];
             $exitoso=$adicional -> save();
@@ -45,7 +44,6 @@ class AdicionalesController extends Controller
             case 'Editar':
             $adicional= Adicionales::find($context['id']);
             $adicional -> nombre = $context['nombre'];
-            $adicional->descripcion=$context['descripcion'];
             $adicional->idtipo=$context['idtipo'];
         
             $exitoso=$adicional -> save();                        

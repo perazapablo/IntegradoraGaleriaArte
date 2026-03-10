@@ -8,10 +8,12 @@ use App\Http\Controllers\AdicionalesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\TiposController;
+use App\Http\Controllers\DbUpController;
 
 
 
-
+     Route::get('/dbup/clientes', [DbUpController::class, 'Cliente'])->name('dbup.clientes');
+        Route::get('/dbup/ordenes', [DbUpController::class, 'Crear_Orden'])->name('dbup.ordenes');
         
       
         Route::get('/login', [LoginController::class, 'login']) -> name('login');
@@ -45,7 +47,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/rol', [RolController::class, 'index'])-> name('Rol.index');
         Route::post('/rol/save', [RolController::class,'save'])->name('Rol.save');
 
-        
+
 });
 
 
