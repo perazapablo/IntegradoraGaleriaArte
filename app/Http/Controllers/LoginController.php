@@ -27,7 +27,7 @@ class LoginController extends Controller
         if(Auth::attempt(['email' => $context['email'], 'password' => $context['password']])){
             $r -> session()-> regenerate() ;
             $user = Auth::user();
-            dd($user);
+            
             //Referencia al id de rol usuario en la base de datos
             if($user -> idrol == 2){
                 return redirect() -> route('Galeria.home');
@@ -36,7 +36,7 @@ class LoginController extends Controller
         else{
             return redirect()-> back() -> withError('Email o contraseña incorrectos!', 'error');
         }
-        //Redireccion de acuerdo al ro;
+        //Redireccion de acuerdo al ro;     
 }
 
     function registro(Request $r){

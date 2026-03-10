@@ -153,7 +153,7 @@
                 return{
                     tipos:@JSON($tipos),
                     mostrarFormulario:false,
-                    operacion:'Agregar',
+                    operacion:'Agregar',    
 
                     form:{
                         id:'',

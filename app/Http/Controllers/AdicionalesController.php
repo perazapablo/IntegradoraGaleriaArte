@@ -10,8 +10,8 @@ class AdicionalesController extends Controller
 {
     public function main()
     {
-        $adicionales = Adicionales::join('tipos','adicionales.idtipo','=','tipos.id' )
-                                    ->select('adicionales.*','tipos.nombre as tipo_nombre')
+        $adicionales = Adicionales::join('tipos','extras.idtipo','=','tipos.id' )
+                                    ->select('extras.*','tipos.nombre as tipo_nombre')
                                     ->get();
                 $tipos = Tipos::all();
 

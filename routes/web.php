@@ -14,14 +14,18 @@ use App\Http\Controllers\TiposController;
 
         
       
-           Route::get('/login', [LoginController::class, 'login']) -> name('login');
+        Route::get('/login', [LoginController::class, 'login']) -> name('login');
         Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
         Route::post('/iniciar_sesion', [LoginController::class, 'iniciar_sesion'])->name('Login.iniciar_sesion');
         Route::post('/registro', [LoginController::class, 'registro'])->name('Login.registro');
         
         
 Route::group(['middleware' => 'auth'], function(){
-  Route::get('/tipos', [TiposController::class, 'main']) -> name('catalogo_tipos');
+        Route::get('/', function(){
+                return;
+        });
+
+        Route::get('/tipos', [TiposController::class, 'main']) -> name('catalogo_tipos');
         Route::post('/tipos_save', [TiposController::class, 'save']) -> name('tipos_save');
 
 
