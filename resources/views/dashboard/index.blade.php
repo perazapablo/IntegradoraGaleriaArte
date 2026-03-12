@@ -122,10 +122,10 @@
           <div class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-[#e6e1db] p-6">
             <div class="flex items-start justify-between">
               <div class="flex flex-col gap-2">
-                <p class="text-[#181511] text-base font-medium leading-normal">Productos mas vendidos</p>
+                <p class="text-[#181511] text-base font-medium leading-normal">Categoría más vendida</p>
                 <p class="text-[#181511] tracking-light text-[32px] font-bold leading-tight truncate">250</p>
                 <div class="flex gap-1">
-                  <p class="text-[#897961] text-base font-normal leading-normal">Obra destacada</p>
+                  <p class="text-[#897961] text-base font-normal leading-normal">Categoría destacada</p>
                   <p class="text-[#078810] text-base font-medium leading-normal">Estimado</p>
                 </div>
               </div>
@@ -312,7 +312,7 @@
                 //pregunto si todo salió bien   
                 if(this.status==200){
                   // Se limpia el arreglo antes de cargar nuevos datos del filtro.
-                    self.valores_chart4.splice(0,self.valores_chart4.length)
+                    self.valores_chart4.genero.splice(0,self.valores_chart4.genero.length)
                     var info3=JSON.parse(this.responseText);
                     self.valores_chart4.genero = info3;
                   }

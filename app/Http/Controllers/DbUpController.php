@@ -34,6 +34,7 @@ class DbUpController extends Controller
                     'idrol'    => 3,
                     'email'    => $faker->email,
                     'password' => bcrypt(123456),
+                    'fecha_creacion' => $faker->dateTimeBetween("-1 year","now")
                 ]);
             $nombre=$faker->name;
             $apellido=$faker->lastName;
@@ -44,6 +45,7 @@ class DbUpController extends Controller
             $cliente->idgenero=$genero->random()->id;
             $cliente->idedad=$edad->random()->id;
             $cliente->idocupacion=$ocupacion->random()->id;
+            $cliente->fecha_creacion=$nuevo_usuario->fecha_creacion;
             $cliente->save();
         }
         return "100 clientes creados con éxito";

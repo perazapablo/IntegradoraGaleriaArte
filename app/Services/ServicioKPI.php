@@ -36,7 +36,7 @@ order by fecha desc*/
             ->orderByRaw("DATE_FORMAT(orden.fecha, '%m-%Y')");
         }
 
-        /////3.Obtener la informacion
+        /////3.Obtener  la informacion
         return $consulta->get();
     }
 

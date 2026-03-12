@@ -80,19 +80,26 @@ class DashBoardController extends Controller{
         return response()->json($resultado);
     }
 
-    function total_productos(){
+    function total_productos(Request $r){
+        $context=$r->all();
         $servicio=new ServicioKPI();
         $x=new \StdClass();
         $info=$servicio->total_ventas_producto($x);
         //dd($info);
         //dd($info[count($info)-1]);
         $y=new \StdClass();
-        $y->idproducto=4;
+        // Si viene idproducto por POST, usarlo, sino usar el valor por defecto
+        $y->idproducto = isset($context['idproducto']) ? $context['idproducto'] : 4;
         $info2=$servicio->total_ventas_producto($y);
         //dd($info2);
         $resultado=new \StdClass();
-        $resultado->top=$info[0];
-        $resultado->bottom=$info[count($info)-1];
+        if(count($info)>0){
+            $resultado->top=$info[0];
+            $resultado->bottom=$info[count($info)-1];
+        }else{
+            $resultado->top=null;
+            $resultado->bottom=null;
+        }
         $resultado->productos=$info;
         $resultado->tendencias=$info2;
 
