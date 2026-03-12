@@ -96,6 +96,7 @@ class DbUpController extends Controller
             }
             $servicio->guardar_orden($orden);
         }
+        return "100 ordenes creadas correctamente";
     }
 
 }

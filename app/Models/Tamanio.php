@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tamanio extends Model
 {
-    protected $table = "tamanios";
+    protected $table = "tamanio";
     public $timestamps = false;
 }
